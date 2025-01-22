@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import CpuUsageDashboard from './CpuUsageDashboard';
+import DataWebSocket from './DataWebSocket';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <CpuUsageDashboard />
+      <DataWebSocket />
     </div>
   );
 }
