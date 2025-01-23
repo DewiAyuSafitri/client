@@ -13,8 +13,7 @@ function DataWebSocket() {
 
     wsClient.onmessage = (event) => {
       setMessages((prevMessages) => [...prevMessages, event.data]);
-      const dataServer = JSON.parse(event.data);
-      console.log("Data", dataServer);
+      console.log("Data", event);
     };
 
     wsClient.onclose = () => {
