@@ -1,8 +1,11 @@
 import { Client } from '@stomp/stompjs';
 
-const createStompClient = (url, onConnect, onError) => {
+const createStomp = (url, onConnect, onError) => {
   const client = new Client({
     brokerURL: url,
+    debug: (str) => {
+      console.log("TEST ",str); // Debug log
+    },
     onConnect: (frame) => {
       console.log('Connected to STOMP:', frame);
       if (onConnect) onConnect(client, frame);
@@ -13,10 +16,8 @@ const createStompClient = (url, onConnect, onError) => {
     },
   });
 
-  client.activate();
+  client.activate(); // Mengaktifkan koneksi
   return client;
-
-  
 };
 
-export default createStompClient;
+export default createStomp;
